@@ -1,8 +1,8 @@
-const Discord = require('discord.js');
-const getPetitionData = require('../fetch/petitionData');
-const preEmbed = require('../helpers/embed');
+import Discord from 'discord.js'
+import getPetitionData from '../fetch/petitionData'
+import preEmbed from '../helpers/embed'
 
-module.exports = async (msg, petitionID) => {
+export default async (msg: Discord.Message, petitionID: string) => {
 	// Get data
 	const petition = await getPetitionData(petitionID);
 

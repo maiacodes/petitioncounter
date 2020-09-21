@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
+import Discord from 'discord.js'
 
-module.exports = () => {
+export default () => {
 	return new Discord.MessageEmbed()
 		.setColor('#008800')
         .setAuthor(

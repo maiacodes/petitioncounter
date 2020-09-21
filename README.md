@@ -25,7 +25,8 @@ Check the speed of the bot's websocket connection.
 ## How to install, setup and run.
 1) Clone the repo into an empty directory: `git clone https://github.com/maiacodes/petitioncounter`
 2) Install dependencies: `npm install` or `yarn install`
-3) Create a file called `.env` in the directory and enter the bot's environment variables:
+3) Build the app by running `tsc`
+4) Create a file called `.env` in the directory and enter the bot's environment variables:
 ```
 TOKEN=
 PETITION_ID=
@@ -37,4 +38,4 @@ For `PETITION_ID=`, enter the ID of the petition you'd like to track. The ID can
 
 For `PREFIX=`, you can enter the prefix for commands. This is an optional variable, if you don't enter anything it will default to `-`
 
-4) Finally, run `node index.js` to start the bot.
+5) Finally, run `node out/index.js` to start the bot.

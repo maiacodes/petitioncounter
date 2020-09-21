@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios'
 
-module.exports = async (id) => {
+export default async (id: string) => {
 	// Fetch from petitions API
 	const response = await axios.get(`https://petition.parliament.uk/petitions/${id}.json`).catch((error) => { throw new Error(error); });
 

@@ -1,17 +1,21 @@
 // PetitionCounter for Discord: Version 0.1
 
 // Imports
-const Discord = require('discord.js');
-const getPetitionCount = require('./fetch/petitionCount');
+import Discord from 'discord.js'
+import getPetitionCount from './fetch/petitionCount'
 
 // Setup environment
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
+
+// Commands
+import statsCommand from './commands/stats'
 
 // Make Discord Client
 const client = new Discord.Client();
 
 // Store environments
-const petitionID = process.env.PETITION_ID;
+const petitionID = process.env.PETITION_ID || ''; 
 const prefix = process.env.PREFIX || '-';
 
 // On: Gateway connected
@@ -30,7 +34,7 @@ client.on('message', async (msg) => {
 	const cmd = msg.content;
 	// Petition stats command
 	if (cmd === `${prefix}stats`) {
-		require('./commands/stats')(msg, petitionID)
+		statsCommand(msg, petitionID)
 		return
 	}
 
