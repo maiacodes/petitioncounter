@@ -1,7 +1,13 @@
 # PetitionCounter for Discord
 PetitionCounter lets you keep track of petitions on [petition.parliament.uk](https://petition.parliament.uk) from Discord.
 
-## Features & Commands
+**Jump to a section:**
+* [Features & Commands.](#features--commands)
+* [How to install, setup and run.](#how-to-install-setup-and-run)
+* [Reporting issues and requesting features.](#reporting-issues-and-requesting-features)
+* [Pull requests policy.](#pull-requests-policy)
+
+## Features & Commands.
 Here's what PetitionCounter can do!
 
 ### Live status
@@ -39,3 +45,10 @@ For `PETITION_ID=`, enter the ID of the petition you'd like to track. The ID can
 For `PREFIX=`, you can enter the prefix for commands. This is an optional variable, if you don't enter anything it will default to `-`
 
 5) Finally, run `node out/index.js` to start the bot.
+
+## Reporting issues and requesting features.
+You can report issues using [GitHub issues](https://github.com/maiacodes/petitioncounter/issues)
+Just choose an issue template and follow it!
+
+## Pull requests policy.
+If you're proficient at TypeScript, feel free to make changes following my structure and open a pull request for it to be merged with master. I'm happy with most changes as long as they're consistant with the strucutre of the bot. Thanks!
