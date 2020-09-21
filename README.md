@@ -10,16 +10,16 @@ In the bot's 'playing' status, you'll be able to see a quick preview of the amou
 <img width=300 src="https://res.cloudinary.com/dat3rkiml/image/upload/v1600652509/petitioncounter/Screenshot_2020-09-21_at_02.41.43.png"></img>
 
 
-### `-stats` and `-status`
-This command lets you see the amount of signatures a petition has at a glance.
+### Command: `-stats`
+This command lets you see the petition information, including signatures, titles, URL, description and author at a glance.
 
-<img width=400 src="https://res.cloudinary.com/dat3rkiml/image/upload/v1600652518/petitioncounter/Screenshot_2020-09-21_at_02.41.54.png"></img>
+<img width=500 src="https://res.cloudinary.com/dat3rkiml/image/upload/v1600655749/petitioncounter/Screenshot_2020-09-21_at_03.34.47.png"></img>
 
 
-### `-update`
+### Command: `-update`
 This forces a 'Live status' update.
 
-### `-ping`
+### Command: `-ping`
 Check the speed of the bot's websocket connection.
 
 ## How to install, setup and run.
