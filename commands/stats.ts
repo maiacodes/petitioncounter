@@ -2,7 +2,10 @@ import Discord from 'discord.js'
 import getPetitionData from '../fetch/petitionData'
 import preEmbed from '../helpers/embed'
 
-export default async (msg: Discord.Message, petitionID: string) => {
+export default async (msg: Discord.Message) => {
+	// Get environment
+	const petitionID = process.env.PETITION_ID || ''; 
+
 	// Get data
 	const petition = await getPetitionData(petitionID);
 
