@@ -2,7 +2,7 @@
 
 // Imports
 const Discord = require('discord.js');
-const axios = require('axios');
+const getPetitionCount = require('./fetch/petitionCount');
 
 // Setup environment
 require('dotenv').config();
@@ -12,7 +12,7 @@ const client = new Discord.Client();
 
 // Store environments
 const petitionID = process.env.PETITION_ID;
-const prefix = process.env.PREFIX || '-'
+const prefix = process.env.PREFIX || '-';
 
 // On: Gateway connected
 client.on('ready', () => {
@@ -20,7 +20,7 @@ client.on('ready', () => {
 
 	// Interval for every 60 seconds to get petition signatures and set as 'playing' status
 	setInterval(async function() {
-		const data = await getPetitionStats(petitionID);
+		const data = await getPetitionCount(petitionID);
 		await client.user.setActivity(`${data.signature_count} signatures`);
 	}, 60000);
 });
@@ -29,18 +29,9 @@ client.on('ready', () => {
 client.on('message', async (msg) => {
 	const cmd = msg.content;
 	// Petition stats command
-	if (
-		cmd === `${prefix}stats` ||
-		cmd === `${prefix}status` || 
-		cmd.includes(`<@${client.user.id}>`) || // Run if the bot has been @ mentioned
-		cmd.includes(`<@!${client.user.id}>`)
-	) {
-		// Get data
-		const data = await getPetitionStats(petitionID);
-
-		// Reply
-		await msg.reply(`${data.signature_count} signatures`);
-		return;
+	if (cmd === `${prefix}stats`) {
+		require('./commands/stats')(msg, petitionID)
+		return
 	}
 
 	// WS ping command
@@ -53,7 +44,7 @@ client.on('message', async (msg) => {
 	// Update status command
 	if (cmd === `${prefix}update`) {
 		// Get data
-		const data = await getPetitionStats(petitionID);
+		const data = await getPetitionCount(petitionID);
 
 		// Update status
 		await client.user.setActivity(`${data.signature_count} signatures`);
@@ -63,14 +54,6 @@ client.on('message', async (msg) => {
 		return;
 	}
 });
-
-async function getPetitionStats(id) {
-	// Fetch from petitions API
-	const response = await axios.get(`https://petition.parliament.uk/petitions/${id}/count.json`).catch((error) => { throw new Error(error); });
-
-	// Return formatted data
-	return response.data;
-}
 
 // Start bot
 client.login(process.env.TOKEN);
