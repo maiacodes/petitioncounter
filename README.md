@@ -6,12 +6,14 @@ Here's what PetitionCounter can do!
 
 ### Live status
 In the bot's 'playing' status, you'll be able to see a quick preview of the amount of signatures a petition has. This updates frequently.
-![Screenshot](https://cdn.discordapp.com/attachments/731594422692610137/757415090365661244/Screenshot_2020-09-21_at_02.37.07.png)
+
+<img width=300 src="https://res.cloudinary.com/dat3rkiml/image/upload/v1600652509/petitioncounter/Screenshot_2020-09-21_at_02.41.43.png"></img>
 
 
 ### `-stats` and `-status`
 This command lets you see the amount of signatures a petition has at a glance.
-![Screenshot](https://cdn.discordapp.com/attachments/731594422692610137/757415439134490704/Screenshot_2020-09-21_at_02.38.29.png)
+
+<img width=400 src="https://res.cloudinary.com/dat3rkiml/image/upload/v1600652518/petitioncounter/Screenshot_2020-09-21_at_02.41.54.png"></img>
 
 
 ### `-update`
