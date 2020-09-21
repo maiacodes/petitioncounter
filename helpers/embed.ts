@@ -1,13 +1,22 @@
-import Discord from 'discord.js'
+import Discord from 'discord.js';
 
-export default () => {
-	return new Discord.MessageEmbed()
+export default (databox: boolean) => {
+	let embed = new Discord.MessageEmbed()
 		.setColor('#008800')
-        .setAuthor(
-			'PetitionCounter',
-			'https://avatars1.githubusercontent.com/u/8007359?s=460&u=e63fd25403b16404275976da68a25beacc073ea7&v=4',
+		.setAuthor(
+			'PetitionCounter by maiacodes',
+			'https://res.cloudinary.com/dat3rkiml/image/upload/v1600715585/petitioncounter/_maia.png',
 			'https://github.com/maiacodes/petitioncounter'
-		)
-		.setTimestamp()
-		.setFooter('Data provided by petition.parliament.uk', 'https://res.cloudinary.com/dat3rkiml/image/upload/v1600654867/petitioncounter/logo.png');
-}
+		);
+
+	// If the embed is a 'DataBox' add timestamp and attribution
+	if (databox) {
+		embed
+			.setTimestamp()
+			.setFooter(
+				'Data from petition.parliament.uk',
+				'https://res.cloudinary.com/dat3rkiml/image/upload/v1600654867/petitioncounter/logo.png'
+			);
+	}
+	return embed
+};

@@ -9,7 +9,7 @@ export default async (msg: Discord.Message) => {
 	// Get data
 	const petition = await getPetitionData(petitionID);
 
-	const embed = preEmbed()
+	const embed = preEmbed(true)
 		.setTitle(petition.data.attributes.action)
 		.setURL(`https://petition.parliament.uk/petitions/${petitionID}`)
 		.setDescription(petition.data.attributes.background)
