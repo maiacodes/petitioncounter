@@ -13,7 +13,7 @@ export default async (msg: Discord.Message) => {
 		.setTitle('Sign: ' + petition.data.attributes.action)
 		.setURL(`https://petition.parliament.uk/petitions/${petitionID}/signatures/new`)
         .setDescription(`[Click here to sign this petition](https://petition.parliament.uk/petitions/${petitionID}/signatures/new)`)
-        .addField('Signatures so far:', petition.data.attributes.creator_name)
+        .addField('Signatures so far:', petition.data.attributes.signature_count)
 
 	// Reply
 	await msg.reply(embed);
