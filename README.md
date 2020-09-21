@@ -32,6 +32,9 @@ PETITION_ID=
 PREFIX=
 ```
 For `TOKEN=`, enter a Discord bot token, which you can get at [discord.com/developers](https://discord.com/developers).
+
 For `PETITION_ID=`, enter the ID of the petition you'd like to track. The ID can be found in the URL of the petition, it's going to be a 6~ digit number.
+
 For `PREFIX=`, you can enter the prefix for commands. This is an optional variable, if you don't enter anything it will default to `-`
+
 4) Finally, run `node index.js` to start the bot.
